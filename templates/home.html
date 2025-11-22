@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Exam Performance Indicator</title>
+
+    <style>
+        body {
+            background: #f5f7fa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            width: 450px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 22px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 18px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0,123,255,0.3);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 25px;
+            color: #222;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student Exam Performance Indicator</h1>
+
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
+
+            <label>Gender</label>
+            <select name="gender" required>
+                <option disabled selected value="">Select your Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label>Race or Ethnicity</label>
+            <select name="race_ethnicity" required>
+                <option disabled selected value="">Select Ethnicity</option>
+                <option value="group A">Group A</option>
+                <option value="group B">Group B</option>
+                <option value="group C">Group C</option>
+                <option value="group D">Group D</option>
+                <option value="group E">Group E</option>
+            </select>
+
+            <label>Parental Level of Education</label>
+            <select name="parental_level_of_education" required>
+                <option disabled selected value="">Select Parent Education</option>
+                <option value="associate's degree">associate's degree</option>
+                <option value="bachelor's degree">bachelor's degree</option>
+                <option value="high school">high school</option>
+                <option value="master's degree">master's degree</option>
+                <option value="some college">some college</option>
+                <option value="some high school">some high school</option>
+            </select>
+
+            <label>Lunch Type</label>
+            <select name="lunch" required>
+                <option disabled selected value="">Select Lunch Type</option>
+                <option value="free/reduced">free/reduced</option>
+                <option value="standard">standard</option>
+            </select>
+
+            <label>Test Preparation Course</label>
+            <select name="test_preparation_course" required>
+                <option disabled selected value="">Select Test Course</option>
+                <option value="none">None</option>
+                <option value="completed">Completed</option>
+            </select>
+
+            <label>Reading Score out of 100</label>
+            <input type="number" name="reading_score" min="0" max="100" placeholder="Enter your Reading Score" required>
+
+            <label>Writing Score out of 100</label>
+            <input type="number" name="writing_score" min="0" max="100" placeholder="Enter your Writing Score" required>
+
+            <button class="btn" type="submit">Predict your Maths Score</button>
+        </form>
+
+        <h2>The prediction is {{results}}</h2>
+    </div>
+</body>
+</html>

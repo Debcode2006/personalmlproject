@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Exam Performance Indicator</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #4e73df, #1cc88a);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px 50px;
+            border-radius: 18px;
+            text-align: center;
+            width: 500px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background-color: #ffffff;
+            color: #333;
+            font-size: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #f1f1f1;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Student Performance Predictor</h1>
+        <p>
+            This tool uses student demographic and preparation details  
+            to predict the **Math Score** using a machine learning model.<br><br>
+            Click the button below to continue to the prediction form.
+        </p>
+
+        <a href="predictdata" class="btn">Go to Prediction Form →</a>
+    </div>
+</body>
+</html>
